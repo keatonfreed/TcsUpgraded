@@ -1,0 +1,111 @@
+.Header {
+    background-color: var(--color-background-offset);
+    border-radius: 0px 0px 15px 15px;
+    border: 1px solid var(--color-border-main);
+    border-top: none;
+    color: var(--color-text-neutral1);
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 18px;
+    margin-bottom: 20px;
+}
+
+
+.Header .headerItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.Header>.headerItem:first-child {
+    justify-content: flex-start;
+}
+
+.Header>.headerItem:last-child {
+    justify-content: flex-end;
+}
+
+.Header #logo {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.Header #profile {
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--color-text-neutral2)
+}
+
+.Header ul {
+    display: flex;
+    --gap: 20px;
+    gap: var(--gap)
+}
+
+.Header ul li {
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.Header ul li a {
+    color: currentColor;
+}
+
+.Header ul li a.activePage {
+    color: var(--color-text-neutral3)
+}
+
+
+.Header ul li:not(:last-child)::after {
+    content: '';
+    width: 1px;
+    height: 115%;
+    bottom: 0;
+    background-color: currentColor;
+    margin-left: calc(var(--gap)/2);
+    position: absolute;
+    cursor: default;
+}
+
+@media (max-width: 605px) {
+    .Header {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Header>.headerItem:nth-child(2) {
+        justify-content: right;
+    }
+
+    .Header>.dropdownMenu {
+        grid-column: 1 / -1;
+        display: flex;
+    }
+
+    /* 
+    .Header ul li:not(:last-child)::after {
+        display: none;
+    } */
+
+    .Header>.dropdownMenu>.headerItem {
+        user-select: none;
+    }
+}
+
+.Header .themeButton {
+    cursor: pointer;
+    margin-right: 9px;
+    background: none;
+    border: none;
+    line-height: 0;
+    border-radius: 50%;
+}
+
+.Header .themeButton img {
+    height: 28px;
+}

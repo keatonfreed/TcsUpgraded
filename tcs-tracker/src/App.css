@@ -1,0 +1,84 @@
+.App {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    /* height: 100%; */
+    min-height: 100%;
+    padding-inline: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* display: flex;
+    flex-direction: column; */
+
+}
+
+:root {
+    --background-light: rgb(242, 242, 242);
+    --background-dark: hsl(0, 0%, 20%);
+}
+
+body {
+    background-color: var(--background-light);
+}
+
+body:has(.dark) {
+    background-color: var(--background-dark);
+}
+
+
+.light {
+    --color-theme: 'light';
+    --color-background: var(--background-light);
+    --color-background-pop: hsl(0, 0%, 83%);
+    --color-background-bold: hsl(0, 0%, 83%);
+    --color-background-offset: hsl(0, 0%, 88%);
+    --color-background-accent-pop: hsl(120, 39%, 67%);
+    --color-background-accent-bold: hsl(120, 39%, 67%);
+    --color-background-accent: hsl(120, 39%, 57%);
+    --color-border-accent: rgb(76, 174, 76);
+    --color-border-main: hsl(0, 0%, 80%);
+    --color-border-pop: hsl(0, 0%, 70%);
+    --color-text-main: hsl(0, 0%, 0%);
+    --color-text-accent: hsl(0, 0%, 95%);
+    --color-text-neutral1: hsl(0, 0%, 33%);
+    --color-text-neutral2: hsl(0, 0%, 20%);
+    --color-text-neutral3: hsl(0, 0%, 13%);
+
+    /* Light mode CSS properties */
+}
+
+/* Dark mode styles */
+.dark {
+    --color-theme: 'dark';
+    --color-background: var(--background-dark);
+    --color-background-bold: hsl(0, 0%, 45%);
+    --color-background-pop: hsl(0, 0%, 42%);
+    --color-background-accent-pop: hsl(120, 39%, 67%);
+    --color-background-accent-bold: hsl(120, 39%, 67%);
+    --color-background-offset: hsl(0, 0%, 35%);
+    --color-background-accent: hsl(120, 39%, 57%);
+    --color-border-accent: rgb(76, 174, 76);
+    --color-border-main: hsl(0, 0%, 70%);
+    --color-border-pop: hsl(0, 0%, 70%);
+    --color-text-main: hsl(0, 0%, 100%);
+    --color-text-accent: hsl(0, 0%, 95%);
+    --color-text-neutral1: hsl(0, 0%, 96%);
+    --color-text-neutral2: hsl(0, 0%, 98%);
+    --color-text-neutral3: hsl(0, 0%, 99%);
+}
+
+.App.light .svgTheme {
+    filter: brightness(0.17)
+}
+
+.App.dark .svgTheme {
+    filter: brightness(0.85)
+}
+
+.App.light *:focus-visible {
+    outline: 1px solid hsl(0, 0%, 40%);
+}
+
+.App.dark *:focus-visible {
+    outline: 1px solid white;
+}

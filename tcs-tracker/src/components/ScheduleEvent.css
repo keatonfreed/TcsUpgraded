@@ -1,0 +1,212 @@
+.eventHeightControl {
+    height: 94px;
+    transition: height 150ms ease-out;
+}
+
+.eventHeightControl.opened {
+    height: 500px;
+}
+
+.ScheduleEvent {
+    background-color: var(--color-background-offset);
+    border-radius: 15px;
+    border: 1px solid var(--color-border-main);
+    color: var(--color-text-neutral1);
+    padding: 15px;
+    cursor: pointer;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+
+.ScheduleEvent.completed {
+    background-color: var(--color-background-accent);
+    border-radius: 15px;
+    border: 1px solid var(--color-border-accent);
+    color: var(--color-text-accent);
+}
+
+.ScheduleEvent .eventButton {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.ScheduleEvent .eventTime {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.ScheduleEvent .eventTime {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.ScheduleEvent .eventStudent {
+    text-align: right;
+    font-weight: bold;
+}
+
+.ScheduleEvent .eventTitle {
+    /* font-weight: bold; */
+    margin-top: 4px;
+    margin-bottom: 3px;
+    font-size: 1.3rem;
+    grid-column: span 2;
+    text-align: center;
+}
+
+.ScheduleEvent.opened {
+    display: flex;
+    flex-direction: column;
+    cursor: auto;
+}
+
+
+.ScheduleEvent.opened>div {
+    position: relative;
+    width: 100%;
+}
+
+.ScheduleEvent.opened>div:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.ScheduleEvent.opened>div:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-border-main);
+}
+
+.ScheduleEvent.opened.completed>div::after {
+    background-color: var(--color-border-accent);
+}
+
+.ScheduleEvent.opened .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ScheduleEvent.opened .bottom {
+    flex-grow: 1;
+}
+
+.ScheduleEvent.opened .students {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 8px;
+
+    margin-bottom: 13px;
+}
+
+.ScheduleEvent.opened .students .eventStudent {
+    text-align: center;
+    background-color: var(--color-background-bold);
+    padding: 5px 2px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border-main);
+    color: currentColor;
+}
+
+.ScheduleEvent.opened.completed .students .eventStudent {
+    background-color: var(--color-background-accent-bold);
+    border: 1px solid var(--color-border-accent);
+}
+
+.ScheduleEvent.opened .students .eventStudent:hover {
+    text-decoration: underline;
+}
+
+.ScheduleEvent.opened .eventTitle {
+    margin: 0;
+    font-size: 1.0rem;
+    text-align: right;
+}
+
+.ScheduleEvent.opened .eventTime {
+    /* font-size: 1.1rem; */
+    min-width: fit-content;
+}
+
+.ScheduleEvent.opened .eventClose {
+    height: 45px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.ScheduleEvent.opened .eventClose img {
+    height: 100%;
+}
+
+.ScheduleEvent.opened .bottom .eventNotesLabel {
+    margin: 10px 5px;
+    font-weight: bold;
+}
+
+.ScheduleEvent.opened .bottom .eventNotes {
+    background-color: var(--color-background-bold);
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border-main);
+    color: inherit;
+    resize: none;
+    width: 100%;
+    height: 70%;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 3px
+}
+
+.ScheduleEvent.opened .bottom .eventNotes::placeholder {
+    color: currentColor;
+}
+
+.ScheduleEvent.opened.completed .bottom .eventNotes {
+    background-color: var(--color-background-accent-bold);
+    border: 1px solid var(--color-border-accent);
+    /* color: var(--color-text-accent); */
+}
+
+.ScheduleEvent.opened .bottom .eventNotesControls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ScheduleEvent.opened .bottom .eventNotesControls .eventNotesFormatting {
+    display: flex;
+    justify-content: space-between;
+    gap: 7px;
+}
+
+.ScheduleEvent.opened .bottom .eventNotesControls button {
+    padding: 9px 11px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: var(--color-background-pop);
+    border: 1px solid var(--color-border-pop);
+    color: var(--color-text-neutral1);
+    border-radius: 2px;
+}
+
+.ScheduleEvent.opened.completed .bottom .eventNotesControls button {
+    background-color: var(--color-background-accent-pop);
+    border: 1px solid var(--color-border-accent);
+    color: var(--color-text-accent);
+}

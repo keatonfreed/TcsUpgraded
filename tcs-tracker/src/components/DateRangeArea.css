@@ -1,0 +1,40 @@
+.DateRangeArea {
+    display: flex;
+    float: right;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: -5px;
+}
+
+.DateRangeArea p {
+    margin-inline: 10px;
+    color: var(--color-text-main)
+}
+
+.DateRangeArea input {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    color: var(--color-text-main)
+}
+
+@media (max-width: 700px) {
+    .DateRangeArea {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 605px) {
+    .DateRangeArea {
+        float: none;
+        justify-content: center;
+        margin-right: 0;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .DateRangeArea input {
+        padding: 12px 25px;
+    }
+}
